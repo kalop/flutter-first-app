@@ -24,5 +24,6 @@ It requires two classes:
 * StatefulWidget Class, immutable and creates an instance https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html
 * State Class, persists over the lifetime of the widget. https://docs.flutter.io/flutter/widgets/State-class.html
 
-
+## Part1 Step6 Infinite Scrolling ListView
+Scaffold impllements the basic Material Design: https://docs.flutter.io/flutter/material/Scaffold-class.html
 
