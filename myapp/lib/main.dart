@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Startup Name Generator',
       home: new RandomWords(),
+
     );
   }
 }
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
 //State class
 class RandomWordsState extends State<RandomWords> {
   final List<WordPair> _suggestions = <WordPair>[];
-
+  final Set<WordPair> _saved = new Set<WordPair>();
   final TextStyle _biggerFont = const TextStyle(fontSize: 18.0);
 
   //build the ListView that displays the suggested word pairing
@@ -64,11 +65,16 @@ class RandomWordsState extends State<RandomWords> {
   }
 
   Widget _buildRow(WordPair pair){
+    final bool alreadySaved = _saved.contains(pair);
     return new ListTile(
       title: new Text(
         pair.asPascalCase,
         style: _biggerFont,
-      )
+      ),
+      trailing: new Icon(
+        alreadySaved ? Icons.favorite : Icons.favorite_border,
+        color:alreadySaved ? Colors.red : null,
+      ),
     );
   }
 
@@ -76,15 +82,18 @@ class RandomWordsState extends State<RandomWords> {
   Widget build(BuildContext context){
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Startup Name Generator'),
+        title: new Text('Startup Name Generator New'),
       ),
       body: _buildSuggestions(),
     );
   }    
+
+  
 }
 
 //Stateful class
 class RandomWords extends StatefulWidget {
   @override 
   RandomWordsState createState() => new RandomWordsState();
+
 }

@@ -19,9 +19,9 @@ samples, guidance on mobile development, and a full API reference.
 ## Part1 Step5 Stateful widget
 
 Stateless is immutable, the properties can't change
-Stateful widgetsmaintain the state that might chang during the lifetime of the widget.
+Stateful widgetsmaintain the state that might change during the lifetime of the widget.
 It requires two classes:
-* StatefulWidget Class, immutable and creates an instance https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html
+* StatefulWidget Class, mutable and creates an instance https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html
 * State Class, persists over the lifetime of the widget. https://docs.flutter.io/flutter/widgets/State-class.html
 
 ## Part1 Step6 Infinite Scrolling ListView
