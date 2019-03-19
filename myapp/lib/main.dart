@@ -16,13 +16,14 @@ class MyApp extends StatelessWidget {
 //State class
 class RandomWordsState extends State<RandomWords> {
   final List<WordPair> _suggestions = <WordPair>[];
+
   final TextStyle _biggerFont = const TextStyle(fontSize: 18.0);
 
   //build the ListView that displays the suggested word pairing
   Widget _buildSuggestions() {
-
     return new ListView.builder(
       padding: const EdgeInsets.all(16.0),
+   
 
       // The itemBuilder callback is called once per suggested 
       // word pairing, and places each suggestion into a ListTile
@@ -47,11 +48,12 @@ class RandomWordsState extends State<RandomWords> {
         // pairings...
         print('length: '+ _suggestions.length.toString());
         print('Index: '+ index.toString());
-        if (index >=_suggestions.length){
+        if ( index >=_suggestions.length){
           // ...then generate 10 more and add them to the 
           // suggestions list.
-          _suggestions.addAll(generateWordPairs().take(_suggestions.length~/2));
+          _suggestions.addAll(generateWordPairs().take(10));
         }
+        
         // if (index < (_suggestions.length / 2)) {
         //   _suggestions.removeRange((_suggestions.length *0.75).round(), _suggestions.length-1);
         // }
